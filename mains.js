@@ -25,18 +25,21 @@ function sumOfColumns(x){
 sumOfColumns(matrix1);
 
 //ex.2
-let matrix2 =  [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+let matrix2 =  [
+    [1,2,3],
+    [4,5,6],
+    [7,]
+];
 function smallestInRow(x){
     let sum=[];
-    for(let i = 0; i<x[0].length; i++){
-        let smaller = 0
-        for(let j=0;j<x[i].length;j++ ){
-            smaller += x[i][0]
-            if(smaller>x[i][j]){
-                smaller = x[i][j];
+    for(let i = 0; i<x.length; i++){
+        let smaller = x[i][0];
+        for(let j=1;j<x[i].length;j++ ){
+            if(smaller > x[i][j]){
+                 smaller = x[i][j];
             }
             else{
-                continue;
+             continue;
             }
         }sum.push(smaller);
     }console.log(sum);
@@ -60,17 +63,16 @@ function sorted(x){
 console.log(x);
 }
 sorted(number4);
-// //ex.5
+// //ex.5 
 function shuffle(x){
     let list = [];
-    for(let i = 0; i<x.length;i++){
-        let random = Math.floor(Math.random(0-x.length)*x.length);
-        list.push(x[random]);
-    
-    } console.log(list);
+    while (x.length > 0) {
+        let randomIndex = Math.floor(Math.random() * (x.length));
+        list.push(x.splice(randomIndex, 1)[0]);
+    }
+    console.log(list);
 }
 shuffle([1,5,8]);
-
 //ex.6
 //index:0,element:1
 //index:1,element:2
