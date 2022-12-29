@@ -14,13 +14,12 @@ printMatrix(matrix);
 let matrix1 = [[1,2,3],[4,5,6],[7,8,9]];
 function sumOfColumns(x){
     let sum=[0,0,0];
-    for(let i=0; i<x[0].length; i++){
-        let grow = 0;
+    for(let i=0; i<x.length; i++){
         for(let j=0;j<x[i].length;j++ ){
-            sum[i] +=parseInt(x[i][j]);
+            sum[i] +=parseInt(x[j][i]);
         }
-    }
-    console.log(sum)
+    } 
+    console.log(sum);
 }
 sumOfColumns(matrix1);
 
@@ -28,7 +27,7 @@ sumOfColumns(matrix1);
 let matrix2 =  [
     [1,2,3],
     [4,5,6],
-    [7,]
+    [7,8,9]
 ];
 function smallestInRow(x){
     let sum=[];
@@ -73,6 +72,7 @@ function shuffle(x){
     console.log(list);
 }
 shuffle([1,5,8]);
+
 //ex.6
 //index:0,element:1
 //index:1,element:2
